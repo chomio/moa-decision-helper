@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f6f0" />
+    <meta name="description" content="각자의 좋은 조건과 싫은 조건을 반영해 모두가 납득할 수 있는 선택을 찾아요." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="모아" />
+    <title>모아 | 함께 정하는 오늘</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./assets/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#top" aria-label="모아 홈"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>모아<span class="brand-period">.</span></span></a>
+        <p class="side-label">TOGETHER, BETTER</p>
+        <div class="side-message"><span class="side-mark" aria-hidden="true">✳</span><p>모두의 마음을<br /><strong>한곳에 모아요.</strong></p></div>
+        <div class="side-bottom"><span class="privacy-dot"></span> 입력한 내용은 이 기기에만 있어요</div>
+      </aside>
+
+      <main class="main-content" id="top">
+        <header class="topbar">
+          <div class="breadcrumb"><span>내 공간</span><span class="crumb-slash">/</span><strong>새로운 결정</strong></div>
+          <div class="topbar-actions"><span class="local-label"><i></i> 내 기기에서만 작동</span><button class="install-button" id="install-button" type="button" title="모아 앱 설치"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 15v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4" /></svg><span>앱 설치</span></button><button class="reset-button" id="reset-button" type="button" aria-label="입력 초기화" title="입력 초기화"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36L3 8m0-5v5h5" /></svg></button></div>
+        </header>
+
+        <section class="intro-row">
+          <div><p class="eyebrow">A BETTER WAY TO DECIDE</p><h1>정답보다,<br /><span>모두의 납득.</span></h1><p class="intro-copy">각자 마음에 드는 것과 피하고 싶은 것을 골라 주세요. 선택하는 즉시 추천이 달라져요.</p></div>
+          <div class="step-indicator"><span>01</span><i></i><span>선호 모으기</span><i></i><span>02</span><i></i><span>함께 고르기</span></div>
+        </section>
+
+        <div class="workspace-grid">
+          <div class="form-column">
+            <section class="section-block decision-block" aria-labelledby="decision-heading">
+              <div class="section-heading"><div class="section-number">01</div><div><p class="eyebrow">WHAT ARE WE DECIDING?</p><h2 id="decision-heading">무엇을 함께 정할까요?</h2></div></div>
+              <div class="choice-tabs" role="group" aria-label="결정 종류">
+                <button class="choice-tab is-active" type="button" data-type="destination"><span aria-hidden="true">↗</span> 여행지</button>
+                <button class="choice-tab" type="button" data-type="dinner"><span aria-hidden="true">◌</span> 회식 장소</button>
+                <button class="choice-tab" type="button" data-type="date"><span aria-hidden="true">▦</span> 날짜</button>
+              </div>
+              <label class="field-label" for="decision-title">결정 제목</label>
+              <input class="text-input" id="decision-title" type="text" maxlength="50" value="우리의 다음 여행" placeholder="예: 금요일 팀 회식 장소" />
+            </section>
+
+            <section class="section-block people-block" aria-labelledby="people-heading">
+              <div class="section-heading people-heading"><div class="section-number">02</div><div><p class="eyebrow">EVERY VOICE COUNTS</p><h2 id="people-heading">각자의 마음을 들려주세요</h2><p class="section-caption">조건을 적을 필요 없이 버튼을 골라요. 결과는 선택과 함께 바로 바뀌어요.</p></div><span class="people-count" id="people-count">3명</span></div>
+              <div class="people-list" id="people-list"></div>
+              <button class="add-person-button" id="add-person" type="button"><span aria-hidden="true">+</span> 함께 정할 사람 추가</button>
+            </section>
+
+            <div class="form-footer"><span class="privacy-note"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg> 입력 내용은 서버로 전송되지 않아요</span><button class="calculate-button" id="calculate-button" type="button">모두를 위한 선택 찾기 <span aria-hidden="true">↗</span></button></div>
+          </div>
+
+          <aside class="results-column" aria-labelledby="results-heading">
+            <div class="results-head"><div><p class="eyebrow">THE BALANCED PICK</p><h2 id="results-heading">함께 고른다면</h2></div><span class="balance-badge"><span aria-hidden="true">✳</span> 균형 계산</span></div>
+            <p class="results-description" id="results-description">예시 선택이 반영된 후보예요. 선택을 바꾸면 바로 다시 계산돼요.</p>
+            <div class="recommendation-list" id="recommendation-list" aria-live="polite"></div>
+            <button class="show-all-button" id="show-all-candidates" type="button" hidden>전국 후보 모두 보기</button>
+            <div class="balance-note"><span class="balance-icon" aria-hidden="true">↗</span><div><strong>다수보다, 모두의 만족을</strong><p>가장 만족도가 낮은 사람의 의견도 크게 반영해요. 싫은 조건은 좋은 조건보다 더 무겁게 계산됩니다.</p></div></div>
+            <div class="score-legend"><span><i class="legend-like"></i>좋은 조건</span><span><i class="legend-dislike"></i>피하고 싶은 조건</span></div>
+            <button class="recalculate-button" id="recalculate-button" type="button">현재 선택으로 다시 계산 <span aria-hidden="true">↻</span></button>
+          </aside>
+        </div>
+        <footer class="page-footer"><span>모아 · 결정은 함께할수록 좋아요.</span><span id="storage-status">브라우저 저장소에 보관 중</span><button id="protect-storage-button" type="button">저장 보호 요청</button><button id="export-backup" type="button">백업 다운로드</button><button id="import-backup" type="button">백업 복원</button><input id="backup-file" type="file" accept="application/json,.json" hidden /><span>간단하고 투명한 균형 계산</span></footer>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <aside class="update-banner" id="update-banner" aria-live="polite" hidden><span>새 버전을 사용할 수 있어요.</span><button id="update-button" type="button">업데이트</button><button id="dismiss-update" type="button" aria-label="업데이트 안내 닫기">×</button></aside>
+  </body>
+</html>
