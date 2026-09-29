@@ -1,4 +1,4 @@
-const CACHE_NAME = "moa-app-shell-v3";
+const CACHE_NAME = "moa-app-shell-v4";
 const APP_FILES = ["./", "./index.html", "./styles.css", "./main.js", "./manifest.webmanifest", "./assets/icon.svg"];
 
 self.addEventListener("install", (event) => {

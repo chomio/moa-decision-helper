@@ -27,21 +27,38 @@ const candidateSets = {
     { name: "수원", detail: "화성 성곽과 행궁동 골목을 즐기는 가까운 여행", tags: ["문화·전통", "도시 여행", "맛집", "대중교통", "도보 여행", "카페", "사람 많은 곳"] },
     { name: "광주", detail: "미술관과 시장, 남도 음식을 즐기는 문화 여행", tags: ["도시 여행", "문화·전통", "맛집", "기차 이동", "대중교통", "실내 코스"] }
   ],
-  dinner: [
-    { name: "광화문 샤브샤브", detail: "대화하기 편하고 여럿이 나눠 먹기 좋아요", tags: ["한식", "조용한 대화", "넓은 좌석", "대중교통", "가성비", "메뉴 다양"] },
-    { name: "성수 이탈리안", detail: "분위기 좋은 파스타와 활기찬 거리", tags: ["양식", "야외 테라스", "대중교통", "시끄러운 곳", "비싼 곳", "긴 웨이팅", "예약 필수"] },
-    { name: "을지로 한식주점", detail: "퇴근 후 천천히 이야기 나누기 좋은 곳", tags: ["한식", "조용한 대화", "대중교통", "매운 음식", "좁은 좌석", "늦게 끝남"] },
-    { name: "망원 비건식당", detail: "가볍고 산뜻한 메뉴, 부담 없는 분위기", tags: ["비건 메뉴", "조용한 대화", "대중교통", "가성비", "메뉴 다양", "넓은 좌석"] },
-    { name: "강남 스시 오마카세", detail: "정갈한 일식 코스, 예약하고 즐기는 저녁", tags: ["일식", "조용한 대화", "비싼 곳", "예약 필수", "좁은 좌석", "메뉴 선택 적음"] },
-    { name: "합정 한식뷔페", detail: "메뉴가 다양하고 취향대로 고를 수 있어요", tags: ["한식", "넓은 좌석", "대중교통", "가성비", "메뉴 다양", "매운 음식"] }
-  ],
-  date: [
-    { name: "이번 주 금요일 저녁", detail: "퇴근 후 만나 여유 있게 식사해요", tags: ["평일", "저녁", "퇴근 후", "오프라인", "2시간 이내"] },
-    { name: "이번 주 토요일 점심", detail: "주말 한낮에 부담 없이 만나요", tags: ["주말", "점심", "오프라인", "2시간 이내"] },
-    { name: "다음 주 수요일 저녁 화상 모임", detail: "한 주 중간, 퇴근 뒤 짧게 만나요", tags: ["평일", "저녁", "퇴근 후", "온라인", "2시간 이내"] },
-    { name: "이번 주 일요일 오후", detail: "일정 전후로 조정하기 쉬운 시간", tags: ["주말", "오후", "오프라인", "유동적"] },
-    { name: "다음 주 금요일 점심 통화", detail: "점심시간에 온라인으로 짧게 만나요", tags: ["평일", "점심", "온라인", "2시간 이내"] },
-    { name: "이번 주 토요일 브런치", detail: "주말 오전, 여유롭게 시작하는 만남", tags: ["주말", "오전", "오프라인", "유동적"] }
+  food: [
+    { name: "김치찌개와 계란말이", detail: "익숙하고 든든하게 즐기는 따뜻한 한식 한 상", tags: ["한식", "국물 요리", "돼지고기", "매콤한 맛", "따뜻한 음식", "밥과 함께", "유제품 없음"] },
+    { name: "불고기 비빔밥", detail: "고기와 채소를 한 그릇에 담은 균형 잡힌 메뉴", tags: ["한식", "소고기", "밥과 함께", "채소 듬뿍", "맵지 않은 음식", "따뜻한 음식", "글루텐 없음"] },
+    { name: "들깨 버섯 칼국수", detail: "고소한 들깨 국물과 버섯을 곁들인 면 요리", tags: ["한식", "면 요리", "채식 가능", "국물 요리", "따뜻한 음식", "유제품 없음", "견과류 포함"] },
+    { name: "제육볶음 정식", detail: "매콤달콤한 돼지고기와 밥으로 든든하게", tags: ["한식", "돼지고기", "매콤한 맛", "밥과 함께", "따뜻한 음식", "글루텐 포함", "가성비"] },
+    { name: "삼계탕", detail: "닭과 인삼을 푹 끓인 담백한 보양식", tags: ["한식", "닭고기", "국물 요리", "맵지 않은 음식", "따뜻한 음식", "밥과 함께", "글루텐 없음"] },
+    { name: "회덮밥", detail: "신선한 생선과 채소를 새콤하게 비벼 먹어요", tags: ["한식", "해산물", "날음식", "밥과 함께", "채소 듬뿍", "차가운 음식", "매콤한 맛", "글루텐 포함"] },
+    { name: "들기름 막국수", detail: "메밀 향과 들기름의 고소함을 살린 담백한 한 그릇", tags: ["한식", "면 요리", "채식 가능", "맵지 않은 음식", "차가운 음식", "견과류 포함", "유제품 없음"] },
+    { name: "순두부찌개", detail: "부드러운 두부와 얼큰한 국물이 잘 어울려요", tags: ["한식", "채식 가능", "국물 요리", "매콤한 맛", "따뜻한 음식", "밥과 함께", "유제품 없음"] },
+    { name: "초밥 모둠", detail: "여러 생선과 밥을 조금씩 맛보는 일본식 메뉴", tags: ["일식", "해산물", "날음식", "밥과 함께", "맵지 않은 음식", "차가운 음식", "글루텐 포함", "고가 메뉴"] },
+    { name: "돈카츠", detail: "바삭한 튀김옷과 육즙 있는 돼지고기 조합", tags: ["일식", "돼지고기", "튀김", "맵지 않은 음식", "따뜻한 음식", "유제품 포함", "글루텐 포함"] },
+    { name: "연어 덮밥", detail: "연어와 아보카도를 곁들인 산뜻한 덮밥", tags: ["일식", "해산물", "날음식", "밥과 함께", "차가운 음식", "맵지 않은 음식", "글루텐 없음"] },
+    { name: "미소 라멘", detail: "진한 된장 육수와 면, 토핑이 어우러진 일본 라멘", tags: ["일식", "면 요리", "돼지고기", "국물 요리", "따뜻한 음식", "글루텐 포함", "유제품 없음"] },
+    { name: "마파두부 덮밥", detail: "두부와 다진 고기에 얼얼한 소스를 더했어요", tags: ["중식", "돼지고기", "두부", "매콤한 맛", "밥과 함께", "따뜻한 음식", "글루텐 포함"] },
+    { name: "짜장면", detail: "춘장 소스와 쫄깃한 면으로 즐기는 친숙한 중식", tags: ["중식", "면 요리", "돼지고기", "맵지 않은 음식", "따뜻한 음식", "글루텐 포함", "가성비"] },
+    { name: "마라탕", detail: "원하는 재료와 맵기를 직접 고르는 얼얼한 국물", tags: ["중식", "국물 요리", "매콤한 맛", "메뉴 선택 자유", "따뜻한 음식", "글루텐 포함"] },
+    { name: "꿔바로우와 볶음밥", detail: "새콤달콤한 바삭한 고기와 든든한 볶음밥", tags: ["중식", "돼지고기", "튀김", "밥과 함께", "맵지 않은 음식", "따뜻한 음식", "글루텐 포함"] },
+    { name: "마르게리타 피자", detail: "토마토와 바질, 치즈를 올린 클래식 피자", tags: ["이탈리안", "채식 가능", "치즈", "구운 요리", "맵지 않은 음식", "따뜻한 음식", "유제품 포함", "글루텐 포함"] },
+    { name: "토마토 파스타", detail: "산뜻한 토마토 소스에 취향에 따라 재료를 더해요", tags: ["이탈리안", "면 요리", "채식 가능", "맵지 않은 음식", "따뜻한 음식", "글루텐 포함", "유제품 없음"] },
+    { name: "버섯 크림 리조또", detail: "버섯과 크림의 부드럽고 진한 풍미", tags: ["이탈리안", "채식 가능", "쌀 요리", "따뜻한 음식", "유제품 포함", "글루텐 없음"] },
+    { name: "치킨 파히타", detail: "닭고기와 채소를 또띠아에 싸 먹는 멕시칸 요리", tags: ["멕시칸", "닭고기", "채소 듬뿍", "매콤한 맛", "메뉴 선택 자유", "따뜻한 음식", "글루텐 포함"] },
+    { name: "비프 타코", detail: "소고기와 살사, 채소를 한입에 즐겨요", tags: ["멕시칸", "소고기", "채소 듬뿍", "매콤한 맛", "글루텐 없음", "메뉴 선택 자유"] },
+    { name: "팔라펠 샐러드볼", detail: "병아리콩과 신선한 채소로 만든 든든한 비건 한 그릇", tags: ["중동식", "비건", "채식 가능", "채소 듬뿍", "차가운 음식", "유제품 없음", "글루텐 없음"] },
+    { name: "치킨 팟타이", detail: "새콤달콤한 쌀국수와 땅콩의 태국식 볶음면", tags: ["태국식", "닭고기", "면 요리", "매콤한 맛", "따뜻한 음식", "견과류 포함", "글루텐 없음"] },
+    { name: "쌀국수", detail: "향긋하고 맑은 육수에 쌀면을 담은 베트남 음식", tags: ["베트남식", "소고기", "면 요리", "국물 요리", "맵지 않은 음식", "따뜻한 음식", "글루텐 없음", "고수"] },
+    { name: "그릭 샐러드", detail: "토마토와 오이, 올리브에 페타 치즈를 곁들여요", tags: ["그리스식", "채식 가능", "채소 듬뿍", "차가운 음식", "맵지 않은 음식", "유제품 포함", "글루텐 없음"] },
+    { name: "렌틸콩 카레", detail: "향신료와 콩을 푹 끓인 따뜻한 비건 카레", tags: ["인도식", "비건", "채식 가능", "매콤한 맛", "밥과 함께", "따뜻한 음식", "유제품 없음", "글루텐 없음"] },
+    { name: "치킨 티카 마살라", detail: "향신료에 재운 닭고기와 부드러운 토마토 크림 소스", tags: ["인도식", "닭고기", "매콤한 맛", "밥과 함께", "따뜻한 음식", "유제품 포함", "글루텐 없음"] },
+    { name: "에그 베네딕트", detail: "수란과 홀랜다이즈 소스로 즐기는 브런치 메뉴", tags: ["브런치", "달걀", "맵지 않은 음식", "따뜻한 음식", "유제품 포함", "글루텐 포함"] },
+    { name: "두부 포케", detail: "현미밥과 두부, 채소를 골라 담는 가벼운 한 끼", tags: ["하와이안", "비건", "채식 가능", "두부", "밥과 함께", "채소 듬뿍", "메뉴 선택 자유", "유제품 없음"] },
+    { name: "떡볶이와 순대", detail: "매콤한 떡볶이와 분식을 함께 즐기는 간식 한 상", tags: ["분식", "매콤한 맛", "돼지고기", "따뜻한 음식", "가성비", "글루텐 포함"] },
+    { name: "고구마·두부 샐러드", detail: "구운 고구마와 두부를 곁들인 가벼운 채식 메뉴", tags: ["샐러드", "비건", "채식 가능", "두부", "채소 듬뿍", "맵지 않은 음식", "유제품 없음", "글루텐 없음"] }
   ]
 };
 
@@ -50,13 +67,9 @@ const preferenceOptions = {
     likes: ["바다", "자연", "맛집", "카페", "휴식", "액티비티", "문화·전통", "기차 이동", "드라이브", "한적함", "실내 코스", "사진 명소"],
     dislikes: ["장거리 이동", "직접 운전", "사람 많은 곳", "비싼 숙소", "많이 걷기", "촘촘한 일정", "해산물 메뉴", "야외 활동"]
   },
-  dinner: {
-    likes: ["한식", "양식", "일식", "비건 메뉴", "조용한 대화", "넓은 좌석", "대중교통", "가성비", "야외 테라스", "메뉴 다양"],
-    dislikes: ["시끄러운 곳", "비싼 곳", "매운 음식", "좁은 좌석", "긴 웨이팅", "예약 필수", "주차 불편", "메뉴 선택 적음"]
-  },
-  date: {
-    likes: ["주말", "평일", "점심", "저녁", "오후", "오전", "온라인", "오프라인", "퇴근 후", "2시간 이내", "유동적"],
-    dislikes: ["아침 일찍", "늦은 밤", "퇴근 직후", "주말", "평일", "점심", "온라인", "오프라인"]
+  food: {
+    likes: ["한식", "일식", "중식", "이탈리안", "멕시칸", "태국식", "비건", "소고기", "닭고기", "해산물", "면 요리", "국물 요리", "밥과 함께", "채소 듬뿍", "매콤한 맛", "맵지 않은 음식", "따뜻한 음식", "가성비", "글루텐 없음", "유제품 없음"],
+    dislikes: ["매콤한 맛", "날음식", "해산물", "돼지고기", "소고기", "닭고기", "견과류 포함", "글루텐 포함", "유제품 포함", "튀김", "국물 요리", "차가운 음식", "치즈", "달걀", "고수", "고가 메뉴"]
   }
 };
 
@@ -71,9 +84,9 @@ function createPerson(name, preferences = {}) {
 }
 
 const starterPeople = [
-  createPerson("민지", { destination: { likes: ["문화·전통", "카페", "기차 이동", "실내 코스"], dislikes: ["사람 많은 곳", "많이 걷기"] }, dinner: { likes: ["한식", "조용한 대화"], dislikes: ["시끄러운 곳"] }, date: { likes: ["주말", "오후"], dislikes: ["아침 일찍"] } }),
-  createPerson("도윤", { destination: { likes: ["자연", "액티비티", "드라이브", "야외 활동"], dislikes: ["장거리 이동", "직접 운전"] }, dinner: { likes: ["넓은 좌석", "가성비"], dislikes: ["긴 웨이팅"] }, date: { likes: ["평일", "저녁"], dislikes: ["퇴근 직후"] } }),
-  createPerson("서연", { destination: { likes: ["맛집", "사진 명소", "휴식", "도시 여행"], dislikes: ["비싼 숙소", "촘촘한 일정"] }, dinner: { likes: ["비건 메뉴", "대중교통"], dislikes: ["매운 음식"] }, date: { likes: ["주말", "온라인"], dislikes: ["늦은 밤"] } })
+  createPerson("민지", { destination: { likes: ["문화·전통", "카페", "기차 이동", "실내 코스"], dislikes: ["사람 많은 곳", "많이 걷기"] }, food: { likes: ["한식", "국물 요리", "맵지 않은 음식", "따뜻한 음식"], dislikes: ["날음식", "매콤한 맛"] } }),
+  createPerson("도윤", { destination: { likes: ["자연", "액티비티", "드라이브", "야외 활동"], dislikes: ["장거리 이동", "직접 운전"] }, food: { likes: ["일식", "해산물", "면 요리", "매콤한 맛"], dislikes: ["돼지고기", "유제품 포함"] } }),
+  createPerson("서연", { destination: { likes: ["맛집", "사진 명소", "휴식", "도시 여행"], dislikes: ["비싼 숙소", "촘촘한 일정"] }, food: { likes: ["비건", "채소 듬뿍", "가성비", "유제품 없음"], dislikes: ["해산물", "견과류 포함"] } })
 ];
 
 let currentType = "destination";
@@ -244,7 +257,7 @@ function renderRecommendations() {
   }).join("");
   const moreButton = document.querySelector("#show-all-candidates");
   moreButton.hidden = ranked.length <= 8;
-  moreButton.textContent = showAllCandidates ? "추천 상위 8곳만 보기" : `전국 ${ranked.length}곳 모두 보기`;
+  moreButton.textContent = showAllCandidates ? "추천 상위 8개만 보기" : `후보 ${ranked.length}개 모두 보기`;
 }
 
 function syncPersonField(event) {
@@ -356,6 +369,18 @@ peopleList.addEventListener("click", (event) => {
     const group = choice.dataset.pref;
     const selected = people[index].preferences[currentType][group];
     const existingIndex = selected.indexOf(choice.dataset.tag);
+    const oppositeGroup = group === "likes" ? "dislikes" : "likes";
+    const oppositeSelection = people[index].preferences[currentType][oppositeGroup];
+    const oppositeIndex = oppositeSelection.indexOf(choice.dataset.tag);
+    if (oppositeIndex !== -1) {
+      oppositeSelection.splice(oppositeIndex, 1);
+      const oppositeButton = choice.closest(".person-card").querySelector(`[data-pref="${oppositeGroup}"][data-tag="${CSS.escape(choice.dataset.tag)}"]`);
+      if (oppositeButton) {
+        oppositeButton.setAttribute("aria-pressed", "false");
+        oppositeButton.classList.remove(`is-selected-${oppositeGroup === "likes" ? "like" : "dislike"}`);
+        oppositeButton.closest(".preference-group").querySelector(".preference-label span").textContent = `${oppositeSelection.length}개 선택`;
+      }
+    }
     if (existingIndex === -1) selected.push(choice.dataset.tag);
     else selected.splice(existingIndex, 1);
     const isSelected = existingIndex === -1;
@@ -372,7 +397,7 @@ document.querySelectorAll(".choice-tab").forEach((button) => button.addEventList
   currentType = button.dataset.type;
   hasCalculated = false;
   document.querySelectorAll(".choice-tab").forEach((tab) => tab.classList.toggle("is-active", tab === button));
-  const titles = { destination: "우리의 다음 여행", dinner: "다음 회식 장소 정하기", date: "다 함께 만날 날짜" };
+  const titles = { destination: "우리의 다음 여행", food: "우리 모두의 메뉴" };
   document.querySelector("#decision-title").value = titles[currentType];
   renderPeople();
   renderRecommendations();
@@ -427,7 +452,7 @@ document.querySelector("#reset-button").addEventListener("click", () => {
 async function initializeApp() {
   const saved = await restoreState();
   if (saved && Array.isArray(saved.people) && saved.people.every((person) => person?.preferences)) {
-    people = saved.people;
+    people = saved.people.map(normalizeBackupPerson);
     currentType = preferenceOptions[saved.currentType] ? saved.currentType : "destination";
     hasCalculated = Boolean(saved.hasCalculated);
     showAllCandidates = Boolean(saved.showAllCandidates);
